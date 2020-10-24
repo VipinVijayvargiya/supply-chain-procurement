@@ -1,44 +1,11 @@
 @import '../../common-utility/commonStyles.scss';
-.emp-list-componnet{
-    padding: 10px 14px;
-    .emp-table-wrapper{
-        .emp-table-parent{
-            height: 50vh;
-            overflow: auto;
-            position: relative;
-            border-bottom: 2px solid $table-zebra-strip;
-        }
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 100%;
-        border: 1px solid #ddd;
-        th{
-            position: sticky;
-            top: 0;
-            color: $title-white-text;
-            background: $main-header;
-        }
-        th, td {
-            text-align: left;
-            padding: 8px;
-            a{
-                cursor: pointer;
-                text-decoration: none;
-                display: block;
-            }
-        }
-        .action-Cell{
-            cursor: pointer;
-        }
-    }
-    tr:nth-child(even){background-color: $table-zebra-strip}
-    .payment-details-section{
-        .summary-outline--hidden{
-            &:focus{
-                outline: none;
-            }
-        }
+.search-product-wrapper{
+    padding-top: 14px;
+    .search-bar-wrapper{
+        display: flex;
+        //background: #63513d;
+        margin-bottom: 14px;
+        color: #63513d;
+        line-height: 48px;
     }
 }

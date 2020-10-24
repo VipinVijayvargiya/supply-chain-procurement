@@ -23,8 +23,11 @@ body {
     .header-wrapper{
         max-width: 48px;
     }
-    .nestle-logo{
-        max-width: 320px;
+    .logo-wrapper{
+        border-bottom: 2px solid #63513d;
+        .nestle-logo{
+            max-width: 320px;
+        }
     }
     .btn-toggle {
         cursor: pointer;

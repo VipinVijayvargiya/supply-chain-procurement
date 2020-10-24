@@ -94,3 +94,9 @@ export const getsupplierData = () => {
     
   }
 }
+export const searchProductbyQuery = (e) =>{
+  return {
+    type: API_CALL_FAILURE,
+    payload: e
+  };
+}

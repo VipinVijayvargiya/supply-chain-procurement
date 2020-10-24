@@ -30,7 +30,7 @@ const Main = ({
       <div className="btn-toggle" onClick={() => handleToggleSidebar(true)}>
         <Menu />
       </div>
-      <header>
+      <header className="logo-wrapper">
         <img className="nestle-logo" src="https://www.nestle.com/themes/custom/da_vinci_code/logo.png" alt="nestle" />
       </header>
       <div>
