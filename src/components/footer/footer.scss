@@ -1,0 +1,12 @@
+@import '../../common-utility/commonStyles.scss';
+.footer-wrapper{
+    position: fixed;
+    bottom: 0;
+    right: 18px;
+    z-index: 1;
+    @media screen and (min-width: map-get($map: $breakpoints, $key: medium)) {   
+        p{
+            text-align: right;
+        }
+    }
+}
