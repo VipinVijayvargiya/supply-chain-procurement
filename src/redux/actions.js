@@ -1,10 +1,12 @@
 import axios from "axios";
 import { MOCKDATA } from "../mock-data/mock.data";
+import SupplierData from "../mock-data/supplierData";
 import {
   API_CALL_BEGIN,
   API_CALL_DONE,
   API_CALL_FAILURE,
-  CLEAR_INPUT_FIELDS
+  CLEAR_INPUT_FIELDS,
+  SUPPLIER_CALL_DONE
 } from "./actionTypes";
 
 const apiCallBegin = (index) => {
@@ -22,6 +24,13 @@ const apiCallDone = (data) => {
   };
 };
 
+const supplierCallDone = (data) =>{
+  return {
+    type: SUPPLIER_CALL_DONE,
+    payload: data.supplier
+  }; 
+}
+
 const apiFailure = (e) => {
   return {
     type: API_CALL_FAILURE,
@@ -38,32 +47,34 @@ export const clearInputFields = () => {
   }
 }
 
-const getEmpDataFromMockJson = () => {
+const geProdDataFromMockJson = () => {
   const mockDataObj = MOCKDATA;
   console.log('mockDataObj', mockDataObj);
   return mockDataObj;
 }
 
-const getEmpDataFromSession = (dataFromSession, id) => {
-  const sessionDataObj = JSON.parse(dataFromSession);
-  if (id && dataFromSession === null) {
-    window.location.href = 'http://localhost:3000';
-    return;
-  }
-  if (dataFromSession) {
-    return id ? { data: sessionDataObj.data.filter((obj) => { return obj.id === Number(id) })[0] } : sessionDataObj;
-  }
-  return null;
-}
-
 export const getProductData = (id) => {
-  
   return async (dispatch) => {
     dispatch(apiCallBegin());    
       try {
-        let response = await getEmpDataFromMockJson();
+        let response = await geProdDataFromMockJson();
         dispatch(apiCallDone(
           response.data
+        ));
+      } catch (e) {
+        console.log(e);
+        dispatch(apiFailure(e));
+      }
+    
+  }
+}
+export const getsupplierData = () => {
+  return async (dispatch) => {
+    dispatch(apiCallBegin());    
+      try {
+        let response = await SupplierData;
+        dispatch(supplierCallDone(
+          response
         ));
       } catch (e) {
         console.log(e);

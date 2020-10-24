@@ -4,12 +4,14 @@ import {
   API_CALL_DONE,
   API_CALL_FAILURE,
   CLEAR_INPUT_FIELDS,
-  GET_PRODUCT_DATA
+  GET_PRODUCT_DATA,
+  SUPPLIER_CALL_DONE
 } from "../actionTypes";
 
 export const initialState = {
   isLoading: false,
-  empToOnboard: {},
+  supplierData: [],
+  uniqueSupplier: [],
   errorData: [],
   isError: false,
   badge: 0,
@@ -35,19 +37,26 @@ const app = function (state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        empToOnboard: action.payload,
         badge: state.badge + 1,
         favorites: state.favorites + 1
+      }
+    case SUPPLIER_CALL_DONE:
+      const uniqueSupplier=[];
+      action.payload.forEach((obj)=>{
+        if(uniqueSupplier.indexOf(obj.supplier) <0){
+          uniqueSupplier.push(obj.supplier);
+        }
+      })
+      return {
+        ...state,
+        isLoading: false,
+        supplierData: action.payload,
+        uniqueSupplier
       }
     case API_CALL_FAILURE:
       return {
         ...state,
         isError: true,
-      }
-    case CLEAR_INPUT_FIELDS:
-      return {
-        ...state,
-        empToOnboard: action.payload,
       }
     case GET_PRODUCT_DATA:
       return {
