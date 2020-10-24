@@ -1,3 +1,15 @@
 .product-details-wrapper{
-    
+    display: flex;
+    .filter-wrapper{
+        border-right: 2px solid #212121;
+        padding: 20px;
+    }
+    .product-data-wrapper{
+        width: 100%;
+        .product-data{
+            padding: 14px 0 14px 20px;
+            border-bottom: 1px solid #212121;
+            
+        }
+    }
 }

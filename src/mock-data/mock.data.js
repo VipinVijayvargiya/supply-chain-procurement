@@ -1,48 +1,56 @@
 export const MOCKDATA = {
     data: [
         {
-            id: 43900,
-            name: "Duracell - AAA Batteries (4-Pack)",
+            id: 1,
+            name: "Canon Pixma All-in-One Wireless Ink Tank Colour Printer",
             category: "Hardware",
-            price: 5.49,
-            upc: "041333424019",
-            shipping: 5.49,
-            description: "Compatible with select electronic devices; AAA size; DURALOCK Power Preserve technology; 4-pack",
-            manufacturer: "Duracell",
+            sub_category: "printer",
+            price: 12699,
+            supplier_id: 100,
+            shipping: 100.49,
+            description: "Printer Type - Ink Tank, Functionality - All-in-One (Print, Scan, Copy)",
+            manufacturer: "Canon",
             model: "MN2400B4Z",
-            url: "http://www.bestbuy.com/site/duracell-aaa-batteries-4-pack/43900.p?id=1051384074145&skuId=43900&cmp=RMXCC",
-            image: "images/products/4390/43900_sa.jpg"
+            image: "images/products/1.jpg"
         },
         {
-            id: 48530,
-            name: "Duracell - AA 1.5V CopperTop Batteries (4-Pack)",
-            category: "HardGood",
-            price: 5.49,
-            upc: "041333415017",
-            category: [
-                {
-                    id: "pcmcat312300050015",
-                    name: "Connected Home & Housewares"
-                },
-                {
-                    id: "pcmcat248700050021",
-                    name: "Housewares"
-                },
-                {
-                    id: "pcmcat303600050001",
-                    name: "Household Batteries"
-                },
-                {
-                    id: "abcat0208002",
-                    name: "Alkaline Batteries"
-                }
-            ],
-            shipping: 5.49,
-            description: "Long-lasting energy; DURALOCK Power Preserve technology; for toys, clocks, radios, games, remotes, PDAs and more",
-            manufacturer: "Duracell",
-            model: "MN1500B4Z",
-            url: "http://www.bestbuy.com/site/duracell-aa-1-5v-coppertop-batteries-4-pack/48530.p?id=1099385268988&skuId=48530&cmp=RMXCC",
-            image: "images/products/4853/48530_sa.jpg"
+            id: 2,
+            name: "HP DeskJet 2331 All-in-One Inkjet Colour Printer",
+            category: "Hardware",
+            sub_category: "printer",
+            price: 11099,
+            supplier_id: 101,
+            shipping: 100.49,
+            description: "Printer type: Inkjet; Functionality : Multi- function; Printer output: Color",
+            manufacturer: "HP",
+            model: "MN2400B4Z",
+            image: "images/products/2.jpg"
+        },
+        {
+            id: 3,
+            name: "Linc Felt Tip Marker Pens - Assorted Color, 12-Pack",
+            category: "Hardware",
+            sub_category: "printer",
+            price: 359,
+            supplier_id: 102,
+            shipping: 0,
+            description: "Set of 12 felt tip marker pens in a variety of colors High pigment, smear- resistant",
+            manufacturer: "Linc",
+            model: "MN2400B4Z",
+            image: "images/products/3.jpg"
+        },
+        {
+            id: 4,
+            name: "Classic Legal/Wide Ruled Pad (12 pack, 50 sheets per pad)",
+            category: "Hardware",
+            sub_category: "printer",
+            price: 899,
+            supplier_id: 103,
+            shipping: 12.49,
+            description: "12-pack of 50-page yellow legal pads Legal/ Wide ruled(11 / 32 - inch spacing)",
+            manufacturer: "Classic",
+            model: "MN2400B4Z",
+            image: "images/products/4.jpg"
         }
     ]
 };

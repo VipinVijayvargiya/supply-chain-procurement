@@ -5,12 +5,15 @@ import {
   API_CALL_FAILURE,
   CLEAR_INPUT_FIELDS,
   GET_PRODUCT_DATA,
-  SUPPLIER_CALL_DONE
+  SUPPLIER_CALL_DONE,
+  FILTER_CHANGE
 } from "../actionTypes";
 
 export const initialState = {
   isLoading: false,
   supplierData: [],
+  origionalData: [],
+  filterData: {},
   uniqueSupplier: [],
   errorData: [],
   isError: false,
@@ -51,6 +54,7 @@ const app = function (state = initialState, action) {
         ...state,
         isLoading: false,
         supplierData: action.payload,
+        origionalData: action.payload,
         uniqueSupplier
       }
     case API_CALL_FAILURE:
@@ -64,6 +68,18 @@ const app = function (state = initialState, action) {
         productData: {
 
         }
+      }
+    case FILTER_CHANGE:
+      const {name, value} = action.payload;
+      const filterData = {
+        ...state.filterData,
+        [name]: value
+      }
+      const filteredData = state.origionalData.filter((obj)=>filterData[obj.supplier] === "on")
+      return {
+        ...state,
+        filterData,
+        supplierData: filteredData.length > 0 ? filteredData : state.origionalData
       }
     default:
       return state;

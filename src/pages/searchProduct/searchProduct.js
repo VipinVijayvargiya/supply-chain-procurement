@@ -28,7 +28,8 @@ class SearchProduct extends Component {
     const { productData } = this.props;
     console.log('this.props', this.props);
     const total_number_of_emp = productData ? productData.length : 0;
-  
+
+    console.log('productData', productData);
     return (
       <div className="emp-list-componnet" >
         { productData ? (
@@ -41,28 +42,28 @@ class SearchProduct extends Component {
               alignItems="flex-start"
             >
               {
-                productData.map((emp, index) => {
-                  const { id} = emp;
-                
+                productData.map((product, index) => {
+                  const { id } = product;
+
                   return (
-                    <Grid item xs={12} sm={6} md={3} key={productData.indexOf(emp)}>
+                    <Grid item xs={12} sm={6} md={3} key={productData.indexOf(product)}>
                       <Card>
                         <CardActionArea>
                           <CardMedia
                             component="img"
-                            alt="Contemplative Reptile"
-                            height="40"
-                            image="/static/images/cards/contemplative-reptile.jpg"
-                            title="Contemplative Reptile"
+                            alt={product.name}
+                            // height="100"
+                            // width="100"
+                            image={product.image}
+                            title={product.name}
                           />
                           <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                              Product {index + 1}
+                              {product.name}
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                              across all continents except Antarctica
-                        </Typography>
+                              {product.description}
+                            </Typography>
                           </CardContent>
                         </CardActionArea>
                         <CardActions>

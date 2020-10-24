@@ -6,7 +6,8 @@ import {
   API_CALL_DONE,
   API_CALL_FAILURE,
   CLEAR_INPUT_FIELDS,
-  SUPPLIER_CALL_DONE
+  SUPPLIER_CALL_DONE,
+  FILTER_CHANGE
 } from "./actionTypes";
 
 const apiCallBegin = (index) => {
@@ -28,7 +29,7 @@ const supplierCallDone = (data) =>{
   return {
     type: SUPPLIER_CALL_DONE,
     payload: data.supplier
-  }; 
+  };
 }
 
 const apiFailure = (e) => {
@@ -47,6 +48,16 @@ export const clearInputFields = () => {
   }
 }
 
+export const handleFilterChange = (e) => {
+  const {name, checked} = e.target;
+  return {
+    type: FILTER_CHANGE,
+    payload: {
+      name,
+      value : checked ? "on" : "off"
+    }
+  };
+}
 const geProdDataFromMockJson = () => {
   const mockDataObj = MOCKDATA;
   console.log('mockDataObj', mockDataObj);

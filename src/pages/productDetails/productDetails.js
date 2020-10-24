@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import ProductData from './prductData';
-import { getsupplierData } from "../../redux/actions";
+import { getsupplierData, handleFilterChange } from "../../redux/actions";
 
 class ProductDetails extends Component {
 
@@ -11,19 +11,30 @@ class ProductDetails extends Component {
 
   render () {
     const {supplierData, uniqueSupplier} = this.props;
-    console.log(this.props);
+    console.log(this.props.filterData);
     return (
       <div className="product-details-wrapper">
-        <div>
-          {uniqueSupplier.map((supName)=>
-            <div>
-              {supName}
-            </div>
-          )}
+        <div className="filter-wrapper">
+          <form>
+            {uniqueSupplier.map((supName)=>
+              <div >
+                <label>
+                  <input
+                    name={supName}
+                    type="checkbox"
+                    checked={this.props.filterData[supName] === "on"}
+                    onChange={(e)=>this.props.handleFilterChange(e)} />
+                  {supName}
+                </label>
+              </div>
+            )}
+          </form>
         </div>
-        {supplierData.map((obj, index)=>{
-          return <ProductData {...obj} key={`product-${index}`} />
-        })}
+        <div className="product-data-wrapper">
+          {supplierData.map((obj, index)=>{
+            return <ProductData {...obj} key={`product-${index}`} />
+          })}
+        </div>
       </div>
     )
   }
@@ -33,11 +44,13 @@ const mapStateToProps = state => {
   return {
     isLoading: state.app.isLoading,
     supplierData: state.app.supplierData,
-    uniqueSupplier: state.app.uniqueSupplier
+    uniqueSupplier: state.app.uniqueSupplier,
+    filterData: state.app.filterData
   };
 };
 const mapDispatchToProps = {
-  getsupplierData
+  getsupplierData,
+  handleFilterChange
 };
   
 export default connect(
