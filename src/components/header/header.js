@@ -22,7 +22,7 @@ const Header = (props) => {
   // console.log("props", props);
   // const classes = useStyles();
   return (
-    <div>
+    <div className="header-wrapper">
       {/* <Tooltip title="My Account" arrow> */}
       <IconButton aria-label="My Account" color="inherit">
         <AccountCircleIcon />

@@ -44,7 +44,6 @@ class SearchProduct extends Component {
               {
                 productData.map((product, index) => {
                   const { id } = product;
-
                   return (
                     <Grid item xs={12} sm={6} md={3} key={productData.indexOf(product)}>
                       <Card>
