@@ -1,4 +1,4 @@
-export const MOCKDATA = {
+export const QUERYDATA = {
     data: [
         {
             id: 1,
@@ -51,6 +51,37 @@ export const MOCKDATA = {
             manufacturer: "Classic",
             model: "MN2400B4Z",
             image: "images/products/4.jpg"
+        }
+    ]
+};
+
+export const MOCKDATA = {
+    data: [
+        {
+            id: 2,
+            name: "HP DeskJet 2331 All-in-One Inkjet Colour Printer",
+            category: "Hardware",
+            sub_category: "printer",
+            price: 11099,
+            supplier_id: 101,
+            shipping: 100.49,
+            description: "Printer type: Inkjet; Functionality : Multi- function; Printer output: Color",
+            manufacturer: "HP",
+            model: "MN2400B4Z",
+            image: "images/products/2.jpg"
+        },
+        {
+            id: 3,
+            name: "Linc Felt Tip Marker Pens - Assorted Color, 12-Pack",
+            category: "Hardware",
+            sub_category: "printer",
+            price: 359,
+            supplier_id: 102,
+            shipping: 0,
+            description: "Set of 12 felt tip marker pens in a variety of colors High pigment, smear- resistant",
+            manufacturer: "Linc",
+            model: "MN2400B4Z",
+            image: "images/products/3.jpg"
         }
     ]
 };

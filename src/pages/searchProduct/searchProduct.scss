@@ -1,11 +1,54 @@
 @import '../../common-utility/commonStyles.scss';
 .search-product-wrapper{
     padding-top: 14px;
+    .section-wrap{
+        border: 1px solid #b3b3b3;
+        padding: 14px;
+    }
     .search-bar-wrapper{
-        display: flex;
         //background: #63513d;
         margin-bottom: 14px;
         color: #63513d;
         line-height: 48px;
+        width: 100%;
+        .catlog{
+            font-size: 24px;
+            min-width: 200px;
+        }
+        .custom-search{
+            width: 100%;
+            border-bottom: 1px solid #63513d;
+        }
+        .custom-search--input{
+            input{
+                min-width: 160px;
+            }
+        }
+        .MuiInputBase-root{
+            min-width: 120px;
+            width: 100%;
+        }
+        .MuiInput-underline:before{
+            border: 0px;
+        }
+        .MuiSvgIcon-root{
+            vertical-align: middle;
+        }
+        @media (min-width: 768px) {
+            display: flex;
+            .custom-search{
+                margin-left: 12px;
+            }
+        }
+        @media (max-width: 1090px) {
+            .catlog{
+                font-size: 18px;
+                min-width: 150px;
+            }
+            .MuiSvgIcon-root{
+                display: none;
+            }
+        }
     }
+    
 }

@@ -26,7 +26,6 @@ class SearchProduct extends Component {
   }
 
   inputChanged=(e)=>{
-    console.log(e.target.value)
     this.props.searchProductbyQuery(e);
   }
 
@@ -37,59 +36,56 @@ class SearchProduct extends Component {
     return (
       <div className="search-product-wrapper" >
         <SearchToolbar inputChanged={(e)=>this.inputChanged(e)}/>
-        { serachedProduct ? (
-          <div>
-            <div>Result for your query</div>
-            <Grid
-              container
-              spacing={2}
-              direction="row"
-              justify="flex-start"
-              alignItems="flex-start"
-            >
-              {
-                serachedProduct.map((product, index) => {
-                  const { id } = product;
-                  return (
-                    <Grid item xs={12} sm={6} md={3} key={serachedProduct.indexOf(product)}>
-                      <Card>
-                        <CardActionArea>
-                          <CardMedia
-                            component="img"
-                            alt={product.name}
-                            // height="100"
-                            // width="100"
-                            image={product.image}
-                            title={product.name}
-                          />
-                          <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                              {product.name}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                              {product.description}
-                            </Typography>
-                          </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                          <Link to={`/checkout/${id}/details`}>
-                            <Button size="small" variant="contained" color="secondary" >
-                              Select Item
-                            </Button>
-                          </Link>
-                        </CardActions>
-                      </Card>
-                    </Grid>
-                  )
-                }
-                )}
-            </Grid>
-          </div>
-
-        ) : <Loader />}
+        {serachedProduct && (<div className="section-wrap">
+          <h2>Result for your query</h2>
+          <Grid
+            container
+            spacing={2}
+            direction="row"
+            justify="flex-start"
+            alignItems="flex-start"
+          >
+          {
+            serachedProduct.map((product, index) => {
+              const { id } = product;
+              return (
+                <Grid item xs={12} sm={6} md={3} key={serachedProduct.indexOf(product)}>
+                  <Card>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        alt={product.name}
+                        // height="100"
+                        // width="100"
+                        image={product.image}
+                        title={product.name}
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {product.name}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                          {product.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Link to={`/checkout/${id}/details`}>
+                        <Button size="small" variant="contained" color="secondary" >
+                          Select Item
+                        </Button>
+                      </Link>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              )
+            }
+            )}
+          </Grid>
+        </div>)}
         { productData ? (
-          <div>
-            <div>Preveiosly Ordered Data</div>
+          <div className="section-wrap">
+            <h2>Preveiosly Ordered Data</h2>
             <Grid
               container
               spacing={2}
@@ -146,7 +142,7 @@ const mapStateToProps = state => {
   return {
     isLoading: state.app.isLoading,
     productData: state.app.productData,
-    serachedProduct: state.app.productData
+    serachedProduct: state.app.serachedProduct
   };
 };
 const mapDispatchToProps = {

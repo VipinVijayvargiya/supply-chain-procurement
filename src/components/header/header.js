@@ -55,7 +55,6 @@ const mapStateToProps = state => {
   return {
     badge: state.app.badge,
     favorites: state.app.favorites
-
   };
 };
 const mapDispatchToProps = {

@@ -32,7 +32,7 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
                 </div>
             </SidebarHeader>
             <SidebarContent>
-                <Menu iconShape="circle">
+                {/* <Menu iconShape="circle">
                     {sidebar.data.map((obj)=>{
                         return (
                             
@@ -48,9 +48,9 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
                                 
                         )
                     })}
-                </Menu>
+                </Menu> */}
                 
-                <Menu iconShape="circle">
+                {/* <Menu iconShape="circle">
           <MenuItem
             icon={<ChevronLeft />}
             suffix={<span className="badge red">new</span>}
@@ -58,7 +58,7 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
             dashboard
           </MenuItem>
           <MenuItem icon={<ChevronLeft />}> components</MenuItem>
-        </Menu>
+        </Menu> */}
 
         <Menu iconShape="circle">
           <SubMenu

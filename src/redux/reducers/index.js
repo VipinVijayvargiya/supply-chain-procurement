@@ -6,7 +6,8 @@ import {
   CLEAR_INPUT_FIELDS,
   GET_PRODUCT_DATA,
   SUPPLIER_CALL_DONE,
-  FILTER_CHANGE
+  FILTER_CHANGE,
+  SEARCH_CALL_DONE
 } from "../actionTypes";
 
 export const initialState = {
@@ -42,6 +43,12 @@ const app = function (state = initialState, action) {
         isLoading: false,
         badge: state.badge + 1,
         favorites: state.favorites + 1
+      }
+    case SEARCH_CALL_DONE:
+      return {
+        ...state,
+        isLoading: false,
+        serachedProduct: action.payload
       }
     case SUPPLIER_CALL_DONE:
       const uniqueSupplier=[];

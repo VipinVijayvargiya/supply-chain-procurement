@@ -5,28 +5,28 @@ import { Assignment, ChevronLeft, Group, Menu as MenuIcon, Search, AddCircleOutl
 
 const SearchToolbar = props => {
   return (
-    <div className="search-bar-wrapper">
-          <Typography component="h1" variant="h6" color="inherit" noWrap >
-            Products Catalog
-          </Typography>
-          <FormControl variant="outlined" >
+    <div className="search-bar-wrapper ">
+          <div className="catlog">Products Catalog</div>
+          <div className="custom-search">
             <InputLabel id="demo-simple-select-outlined-label">Search</InputLabel>
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value=""
+              value="Catalog"
               label="SearchCriteria"
+              disabled
             >
-              <MenuItem value={10}>Catalog</MenuItem>
+              <MenuItem value="Catalog">Catalog</MenuItem>
             </Select>
-          </FormControl>
-          <div>
+          </div>
+
+          <div className="custom-search custom-search--input">
             <InputBase
-              placeholder="Search by part #, supplier name or keyword"
+              placeholder="Search keyword"
               onChange={(e)=>{
                 props.inputChanged(e)
               }}
-            /><Search />
+            />
           </div>
         </div>
   )
