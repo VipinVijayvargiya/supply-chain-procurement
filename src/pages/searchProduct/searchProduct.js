@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getProductData, searchProductbyQuery } from "../../redux/actions";
 import { Edit, Delete } from '@material-ui/icons';
-
+import SearchToolbar from '../../components/search-toolbar/search-toolbar';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -36,30 +36,7 @@ class SearchProduct extends Component {
     
     return (
       <div className="search-product-wrapper" >
-        <div className="search-bar-wrapper">
-          <Typography component="h1" variant="h6" color="inherit" noWrap >
-            Products Catalog
-          </Typography>
-          <FormControl variant="outlined" >
-            <InputLabel id="demo-simple-select-outlined-label">Search</InputLabel>
-            <Select
-              labelId="demo-simple-select-outlined-label"
-              id="demo-simple-select-outlined"
-              value=""
-              label="SearchCriteria"
-            >
-              <MenuItem value={10}>Catalog</MenuItem>
-            </Select>
-          </FormControl>
-          <div>
-            <InputBase
-              placeholder="Search by part #, supplier name or keyword"
-              onChange={(e)=>{
-                this.inputChanged(e)
-              }}
-            /><Search />
-          </div>
-        </div>
+        <SearchToolbar inputChanged={(e)=>this.inputChanged(e)}/>
         { serachedProduct ? (
           <div>
             <div>Result for your query</div>
