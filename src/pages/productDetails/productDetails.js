@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import data from './productDetails-data.js';
+import ProductData from './prductData';
+
 
 class ProductDetails extends Component {
 
@@ -7,9 +10,12 @@ class ProductDetails extends Component {
   }
 
   render () {
+    console.log(data.supplier)
     return (
       <div>
-        productDetails
+        {data.supplier.map((obj, index)=>{
+          return <ProductData {...obj} key={`product-${index}`} />
+        })}
       </div>
     )
   }

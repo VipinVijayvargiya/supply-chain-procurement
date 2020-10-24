@@ -7,7 +7,7 @@ class Onboard extends Component {
         const {match: { params } } = this.props;
         return (
             <div>
-                page 3
+                new page
             </div>
         )
     }

@@ -1,3 +1,14 @@
+$sidebar-bg-color: #3f51b5;
+$sidebar-color: #000;
+$sidebar-width: 200px;
+// $sidebar-collapsed-width: 80px;
+$highlight-color: #000;
+// $submenu-color: #3f51b5;
+$submenu-bg-color: #f2f2f2;
+$submenu-bg-color-collapsed: #3f51b5;
+// $icon-bg-color: #2b2b2b;
+$icon-size: 15px;
+@import '~react-pro-sidebar/dist/scss/styles.scss';
 .supply-chain{
     .main-container{
         position: relative;
@@ -5,5 +16,5 @@
     .sidebar-footer{
         position: absolute;
         bottom: 0;
-    }
+    }    
 }
